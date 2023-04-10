@@ -18,7 +18,7 @@ exports.handler = async (event) => {
   const url = new URL(path, GOOGLEAPIS_ORIGIN);
   const parameters = querystring.stringify({
     ...queryStringParameters,
-    key: process.env.GOV_KEY,
+    serviceKey: process.env.GOV_KEY,
   });
 
   url.search = parameters;
