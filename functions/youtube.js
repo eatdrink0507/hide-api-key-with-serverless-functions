@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 const querystring = require("querystring");
 const stringify = require("../utils/stringify.js");
 
-const GOOGLEAPIS_ORIGIN = "https://www.googleapis.com";
+const GOOGLEAPIS_ORIGIN = "https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService";
 const headers = {
   "Access-Control-Allow-Origin": process.env.HOST,
   "Content-Type": "application/json; charset=utf-8",
@@ -18,7 +18,7 @@ exports.handler = async (event) => {
   const url = new URL(path, GOOGLEAPIS_ORIGIN);
   const parameters = querystring.stringify({
     ...queryStringParameters,
-    key: process.env.API_KEY,
+    key: process.env.GOV_KEY,
   });
 
   url.search = parameters;
